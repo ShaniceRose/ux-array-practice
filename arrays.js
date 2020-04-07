@@ -18,8 +18,8 @@
 */
 
 function fridgeContains(fridge, item) {
-    // Your code here.  Check if the item is in the fridge, return true or false.
-    return false;
+     let result = fridge.includes(item)
+    return result;
 }
 
 /* 
@@ -46,7 +46,10 @@ console.log(!fridgeContains(fridge, "eggplant"));
 */
 
 function putItemIntoFridge(fridge, item) {
-    // Your code here.
+    if (!fridge2.includes(item)){
+        fridge2.push(item)
+
+    }
 }
 
 /* 
@@ -77,7 +80,16 @@ console.log(fridge2.length == previousLength + 1 && fridge2.includes("kale"));
 */
 
 function getItemFromFridge(fridge, item) {
-    // Your code here.
+    if (!fridge3.pop(item)){
+        fridge3.pop(item)
+        fridge3.splice(int, 1);
+    } 
+    else{
+        return null;
+
+    }
+
+    
 }
 
 /* 
@@ -168,9 +180,15 @@ function getIndexOfItem(fridge, item) {
     If that was the last of that item, remove the empty array for that item.
     If the item isn't in the fridge, return null.
 */
-function getItemFromNewFridge(fridge, item) {
-    // Your code here.
-}
+function getItemFromNewFridge(newFridge, item) {
+    let newFridge = getIndexOfItem (newFridge, item);
+        if(newFridge.includes(item)) {
+
+            
+        } else{
+            return null;
+        }
+    }
 
 /*
     putItemInNewFridge
@@ -178,8 +196,15 @@ function getItemFromNewFridge(fridge, item) {
     If there are already similar items in the fridge, add this item to their array.
     Otherwise, create a new array in the fridge and put this item in it.
 */
-function putItemInNewFridge(fridge, item) {
-    // Your code here.
+function putItemInNewFridge(newFridge, item) {
+    let itemIndx = getIndexOfItem(newFridge, item);
+    if (fridge.includes(item)) {
+
+    } else {
+      newFridge.push(item);
+    }
+    return item;
+  }
 }
 
 
